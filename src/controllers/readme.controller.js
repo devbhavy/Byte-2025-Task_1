@@ -37,15 +37,15 @@ async function createReadme(req,res){
     
     const topics = myData.topics;
 
-    console.log(myData.languages_url);
+    
     const languagesObject = await axios.get(myData.languages_url,{
         headers: {
           Authorization: `token ${process.env.GITHUB_TOKEN}` // pass the GitHub OAuth token
         }
       });
-    console.log(languagesObject)
+   
     const languages = languagesObject.data;
-    console.log("hi there")
+    
 
     
     const structure = await fetchRepoStructure(url);

@@ -14,9 +14,6 @@ app.use("/app/",rootRouter)
 app.get("/",function(req,res){
     res.send({msg : "hi there"})
 })
-// app.get("/",function(req,res){
-//     res.send("hi there")
-// })
 
 app.listen(port,()=>{
     console.log("server started!!")

@@ -7,7 +7,7 @@ const octokit = new Octokit({
 
 
 async function fetchRepoData(url){
-    console.log(process.env.GITHUB_TOKEN)
+    
     const sep = url.split("/");
     const [owner,repo] = sep.splice(-2);
 
@@ -32,7 +32,7 @@ async function fetchRepoStructure(repoUrl, path = "") {
         const sep = repoUrl.split("/");
         const [owner, repo] = sep.splice(-2);
 
-        console.log({owner,repo})
+        
         const repoInfo = await octokit.request(`GET /repos/${owner}/${repo}`);
         const branch = repoInfo.data.default_branch;
 
